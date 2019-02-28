@@ -107,7 +107,7 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 $("#uploadFace").on("click", function(){
-  console.log('hey');
+  console.log('Calling API.getFace()');
   API.getFace();
   
 })
