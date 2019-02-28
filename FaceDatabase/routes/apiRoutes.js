@@ -5,7 +5,7 @@ var db = require("../models");
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '651740b5ffa343dc82aa1da95c88fde8';
+const subscriptionKey = '';
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
