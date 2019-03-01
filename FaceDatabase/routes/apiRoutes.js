@@ -5,14 +5,14 @@ var db = require("../models");
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '651740b5ffa343dc82aa1da95c88fde8';
+const subscriptionKey = process.env.API_KEY;
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
 // westus, replace "westcentralus" in the URL below with "westus".
 const uriBase = 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect';
 
-var imageUrl =
+var imageUrl = 
       'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?cs=srgb&dl=adult-confidence-elderly-man-1139743.jpg&fm=jpg';
      
 // Request parameters.
