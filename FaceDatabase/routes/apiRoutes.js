@@ -60,6 +60,7 @@ module.exports = function(app) {
 
 
   app.post("/api/face/upload", function(req, res) {
+   
     console.log('this is  app.post for /api/face/upload');
     
     imageUrl = JSON.stringify(req.body.link);

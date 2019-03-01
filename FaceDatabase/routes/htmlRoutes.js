@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     console.log('this was /')
+    console.log('the key is' + process.env.API_KEY)
     res.render("index");
     // db.Example.findAll({}).then(function(dbExamples) {
     //   res.render("index", {
