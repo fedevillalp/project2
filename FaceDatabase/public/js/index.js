@@ -7,7 +7,7 @@
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  
+
   // saveExample: function(example) {
   //   return $.ajax({
   //     headers: {
@@ -30,8 +30,8 @@ var API = {
   //     type: "DELETE"
   //   });
   // },
-  
-  postFace: function(link){
+
+  postFace: function (link) {
     console.log('postface. This is data to be posted:');
     console.log(link);
     return $.ajax({
@@ -40,7 +40,7 @@ var API = {
       },
       type: "POST",
       url: "api/face/upload",
-      data: JSON.stringify({link : link})
+      data: JSON.stringify({ link: link })
     });
   }
 };
@@ -114,11 +114,11 @@ var API = {
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 //This button makes a post to api/face/upload using API.postFace()
-$("#uploadFace").on("click", function(event){
-  
+$("#uploadFace").on("click", function (event) {
+
   event.preventDefault();
   $linkToPicture = $("#link-to-picture").val().trim();
-  console.log( $linkToPicture );
+  console.log($linkToPicture);
   console.log('Calling API.getFace()');
   API.postFace($linkToPicture);
 })
