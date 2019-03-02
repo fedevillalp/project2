@@ -1,6 +1,33 @@
 <div id="home">
   <br>
   <div class="container">
+    <div class="jumbotron center" id="jumbo">
+      <h1 id="appName">Face Unlock</h1>
+      <hr size="20" , style="color: black" noshade>
+      <p id="desc">Secure all of your personal information with Face Unlock.
+        Upload a photo of yourself or scan your face to unlock your apps.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container" style="content=center">
+  <form action="action_page.php">
+    <div id="credentials">
+      {{!-- <div class="row" style="align-content=center" id="credentials"> --}}
+      <label for="uname" id="name"><b>Create Username</b></label>
+      <div class="col-8 offset-2">
+        <input type="text" id="userName" placeholder="Enter Username" required>
+        <br>
+        <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
+          placeholder="Enter link to Picture"></textarea>
+        <br>
+        <button id="uploadFace" type="submit">Submit</button>
+        <button id="cancel" type="button" class="cancelbtn">Cancel</button>
+      </div>
+    </div>
+  </form>
+
+  {{!-- <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <div class="form-group">
@@ -10,10 +37,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
-
