@@ -1,0 +1,72 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+#home{
+  background-color: blue;
+  /* font-family: 'Fredoka One', cursive; */
+  font-family: 'Righteous', cursive;
+}
+
+
+#appName{
+  font-size: 65px;
+  text-shadow: 2px 2px white;
+}
+
+#desc{
+  text-shadow: .9px .9px white;
+  font-size: 18px;
+}
+
+#jumbo{
+  height: 100%;
+  width: 100%;
+  margin: 0 5% 0 5%;
+  text-align: center;
+  background-color: red;
+  align-content: center;
+  text-align: center;
+  padding: 5% 2% 5% 2%;
+  align-content: center;
+  border: yellow;
+}
+
+#name{
+  text-align: center;
+}
+
+#credentials{
+  background-color: rgb(167, 51, 51);
+  font-family: 'Fredoka One', cursive;
+  /* font-family: 'Righteous', cursive; */
+  height: 100%;
+  width: 100;
+  content: center;
+  margin: 5% 25% 0 25%;
+  padding: 1% 0 1% 0;
+  content: inherit;
+  border: yellow;
+}
+
+#uName{
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  /* font-family: 'Righteous', cursive; */
+  align-content: center;
+}
+
+#link-to-picture{
+  margin-top: 3%;
+}
+
+#uploadFace, #cancel{
+  border-radius: 6px;
+  background-color: aqua;
+  border: black;
+  text-align: center;
+  font-size: 14px;
+  margin: 2px 2px;
+  align-content: center;
+
+}
