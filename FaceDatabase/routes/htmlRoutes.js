@@ -1,7 +1,8 @@
 var db = require("../models");
 
+// module.exports = router;
 module.exports = function(app) {
-  // Load index page
+  //Load index page
   app.get("/", function(req, res) {
     console.log('this was /')
     console.log('the key is' + process.env.API_KEY)
@@ -13,6 +14,12 @@ module.exports = function(app) {
     //   });
     // });
   });
+
+  app.get("/login", function (req, res) {
+    res.render("login")
+  })
+
+
 
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
