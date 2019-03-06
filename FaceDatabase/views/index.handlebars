@@ -1,117 +1,45 @@
-<div id="home-header">
-  <div class="container clearfix">
-    <div class="row">
-      <h4 id="header-tagline" class="col-xs-7 col-md-9">Meet and chat with new people for free!
-      </h4>
-      <div id="home-header" class="col-xs-5 col-md-3">
-         <button type="button" class="btn btn-primary" href="login.handlebars">Log In</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<div id="home">
+  <br>
   <div class="container">
-    <div class="row">
-      <div class="col-md-7 register-right">
-        <h2>Create Username</h2L>
-          <div class="register-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
-            </div>
-            <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
-              placeholder="Enter link to Picture"></textarea>
-            <br>
-            <button id="uploadFace" type="submit">Submit using link</button>
-          </div>
-      </div>
+    <div class="jumbotron center" id="jumbo">
+      <h1 id="appName">Face Unlock</h1>
+      <hr size="20" , style="color: black" noshade>
+      <p id="desc">Secure all of your personal information with Face Unlock.
+        Upload a photo of yourself or scan your face to unlock your apps.
+      </p>
     </div>
   </div>
 </div>
-
-{{!-- <div class="container-fluid">
-  <div id="home-header">
-    <div class="container clearfix">
-      <div class="row">
-        <h4 id="header-tagline" class="col-xs-7 col-md-9">Meet and chat with new people for free!
-        </h4>
-        <div id="header-login" class="col-xs-5 col-md-3">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popUpWindow">Log In</button>
-          <div class="modal fade" id="popUpWindow" tabindex="-1" role="dialog" ariia-labelledby="logInLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h3 class="modal-title" id="logInLabel">Log In</h3>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <form>
-    <div class="container" style="content=center">
-      <div class="form-group" action="action_page.php" id="credentials">
-        <label for="uName">Create User Name</label>
-        <input type="text" class="form-control" id="userName" placeholder="User Name">
-
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName" placeholder="First Name">
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last Name</label>
-          <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="uPassword" placeholder="Enter Password">
-        </div>
+<div class="container" style="content=center">
+  <form action="action_page.php">
+    <div id="credentials">
+      {{!-- <div class="row" style="align-content=center" id="credentials"> --}}
+      <label for="uname" id="name"><b>Create Username</b></label>
+      <div class="col-8 offset-2">
+        <input type="text" id="userName" placeholder="Enter Username" required>
+        <br>
         <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
           placeholder="Enter link to Picture"></textarea>
         <br>
         <button id="uploadFace" type="submit">Submit</button>
+        <button id="cancel" type="button" class="cancelbtn">Cancel</button>
       </div>
     </div>
   </form>
-</div>
-<form>
-<div class="container" style="content=center">
-  <form action="action_page.php">
-    <div id="credentials">
-      <label for="userName"><b>Create Username</b>
-        <input type="text" id="username" placeholder="Enter Username" required>
-      </label>
-      <br>
-      <label for="firstName"><b>First Name</b>
-        <input type="text" id="first_name" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <label for="lastName"><b>Last Name</b>
-        <input type="text" id="last_name" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <label for="psw"><b>Password</b>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-      </label>
-      <br>
-      <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
-        placeholder="Enter link to Picture"></textarea>
-      <br>
-      <button id="uploadFace" type="submit">Submit</button>
+
+  {{!-- <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <div class="form-group">
+          <label for="link-to-face">Link to Face Picture</label>
+          <textarea class="form-control" id="link-to-picture" aria-describedby="example-description" placeholder="Enter link to Face Picture"></textarea>
+          <button id="uploadFace" class="btn btn-success float-right delete" >Upload Face</button>
+        </div>
+      </div>
     </div>
+  </div> --}}
+
 </div>
-</form> --}}
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

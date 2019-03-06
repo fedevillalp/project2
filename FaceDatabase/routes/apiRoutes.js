@@ -34,19 +34,28 @@ const options = {
 };
 
 module.exports = function(app) {
-  // // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
-  //     res.json(dbExamples);
-  //   });
-  // });
+  // Get all examples
+  app.get("/api/users", function(req, res) {
+    db.users.findAll({}).then(function(dbUsers) {
+      console.log(dbUsers);
+      res.json(dbUsers);
+      
+    });
+  });
 
-  // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Create a new example
+  app.post("/api/signup", function(req, res) {
+    db.users.create({
+      firstName: 'Dre', 
+      lastName: 'Campbell', 
+      userPicture: 'https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688',
+      username: 'drecamp8',
+      password: 'password'
+    }).then(function(dbUsers) {
+      console.log('User created...');
+      res.json(dbUsers);
+    });
+  });
 
   // // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
