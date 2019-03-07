@@ -42,7 +42,31 @@ var API = {
       url: "api/face/upload",
       data: JSON.stringify({ link: link })
     });
+  },
+
+  postFaceFile: function (link) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/face/uploadfile",
+      data: JSON.stringify({ link: link })
+    });
+  },
+
+  postFaceCompare: function (link) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/face/compare",
+      data: JSON.stringify({ link: link })
+    });
   }
+
+
 };
 
 // // refreshExamples gets new examples from the db and repopulates the list
@@ -121,4 +145,24 @@ $("#uploadFace").on("click", function (event) {
   console.log($linkToPicture);
   console.log('Calling API.getFace()');
   API.postFace($linkToPicture);
+})
+
+//This button makes a post to api/face/uploadfile
+$("#uploadFaceFile").on("click", function (event) {
+
+  event.preventDefault();
+  $linkToPicture = $("#link-to-picture").val().trim();
+  console.log($linkToPicture);
+  console.log('Calling API.getFaceFile()');
+  API.postFaceFile($linkToPicture);
+})
+
+//This temporary button makes a post to api/face/compare
+$("#faceCompare").on("click", function (event) {
+
+  event.preventDefault();
+  $linkToPicture = $("#link-to-picture").val().trim();
+  console.log($linkToPicture);
+  console.log('Calling API.getFaceFile()');
+  API.postFaceCompare($linkToPicture);
 })
