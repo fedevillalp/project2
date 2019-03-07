@@ -90,8 +90,9 @@ module.exports = function(app) {
     
     imageUrl = JSON.stringify(req.body.link);
     options.body = '{"url": ' +     imageUrl +   '}'
+
     
-    // This code provided my Microsoft to make request
+    // This code provided by Microsoft to make request
     request.post(options, (error, response, body) => {
       if (error) {
         console.log('Error: ', error);
@@ -100,6 +101,21 @@ module.exports = function(app) {
       let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
       console.log('JSON Response\n');
       console.log(jsonResponse);
+
+      var faceId = JSON.parse(body);
+      faceId = faceId[0].faceId;
+
+      db.users.create({
+        firstName: 'Test2', 
+        lastName: 'Test2', 
+        userPicture: imageUrl,
+        username: faceId, 
+        password: 'password2'
+      }).then(function(dbUsers) {
+        console.log('User Test created...');
+        //res.json(dbUsers);
+      });
+
       res.json(jsonResponse);
     });
     

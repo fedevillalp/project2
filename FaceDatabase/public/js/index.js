@@ -1,3 +1,4 @@
+//var db = require("../../models"); this does not recognize require ? why ?
 
 // // Get references to page elements
 // var $exampleText = $("#example-text");
@@ -34,6 +35,7 @@ var API = {
   postFace: function (link) {
     console.log('postface. This is data to be posted:');
     console.log(link);
+    //insert username and userlastname into database
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -41,6 +43,11 @@ var API = {
       type: "POST",
       url: "api/face/upload",
       data: JSON.stringify({ link: link })
+    }).then(function(data){
+      var data = JSON.parse(data);
+      console.log('This is THEN condition of postFace. The Microsoft faceId is: ')
+      console.log(data[0].faceId);
+      //insert faceID into database:
     });
   },
 
