@@ -12,12 +12,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       field: 'first_name'
     },
-    lastName: {
-      type: DataTypes.STRING,
-      field: 'last_name'
-    },
-    userPicture: DataTypes.STRING,
-    username: DataTypes.STRING,
+    pictureLink: DataTypes.STRING, //link to picture
+    userName: DataTypes.STRING, 
+    faceId: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
       freezeTableName: true,

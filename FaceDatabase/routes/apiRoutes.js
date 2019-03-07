@@ -106,10 +106,10 @@ module.exports = function(app) {
       faceId = faceId[0].faceId;
 
       db.users.create({
-        firstName: 'Test2', 
-        lastName: 'Test2', 
-        userPicture: imageUrl,
-        username: faceId, 
+        firstName: req.body.first_name, 
+        userName: req.body.user_name, 
+        pictureLink: imageUrl,
+        faceId: faceId, 
         password: 'password2'
       }).then(function(dbUsers) {
         console.log('User Test created...');
