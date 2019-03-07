@@ -1,83 +1,11 @@
-.list-group-item {
-  line-height: 2.5;
-}
-
-#home{
-  background-color: blue;
-  /* font-family: 'Fredoka One', cursive; */
-  font-family: 'Righteous', cursive;
-}
-
-
-#appName{
-  font-size: 65px;
-  text-shadow: 2px 2px white;
-}
-
-#desc{
-  text-shadow: .9px .9px white;
-  font-size: 18px;
-}
-
-#jumbo{
-  height: 100%;
-  width: 100%;
-  margin: 0 5% 0 5%;
-  text-align: center;
-  background-color: red;
-  align-content: center;
-  text-align: center;
-  padding: 5% 2% 5% 2%;
-  align-content: center;
-  border: yellow;
-}
-
-#name{
-  text-align: center;
-}
-
-#credentials{
-  background-color: rgb(167, 51, 51);
-  font-family: 'Fredoka One', cursive;
-  /* font-family: 'Righteous', cursive; */
-  height: 100%;
-  width: 100;
-  content: center;
-  margin: 5% 25% 0 25%;
-  padding: 1% 0 1% 0;
-  content: inherit;
-  border: yellow;
-}
-
-#uName{
-  text-align: center;
-  font-family: 'Fredoka One', cursive;
-  /* font-family: 'Righteous', cursive; */
-  align-content: center;
-}
-
-#link-to-picture{
-  margin-top: 3%;
-}
-
-#uploadFace, #cancel{
-  border-radius: 6px;
-  background-color: aqua;
-  border: black;
-  text-align: center;
-  font-size: 14px;
-  margin: 2px 2px;
-  align-content: center;
-
-} 
-   
 #home-header{
-
   background-color: rgb(59, 24, 104);
   font-family: 'Fredoka One', cursive;
   font-family: 'Righteous', cursive;
   color: #f8f8f8;
   opacity: 0.70;
+  margin-bottom: 2%;
+  margin-top: .2%;
 }
 
 
@@ -88,6 +16,7 @@
 .body{
   background-image: url('/public/assets/images/chat_bg.png');
 }
+
 #home-header{
   background-color: rgb(64, 138, 167);
   /* font-family: 'Fredoka One', cursive; */
@@ -95,10 +24,15 @@
   
  
 }
+
+
+
+
 #appName{
   font-size: 65px;
   text-shadow: 2px 2px white;
 }
+
 #desc{
   text-shadow: .9px .9px white;
   font-size: 18px;
@@ -120,6 +54,7 @@
 /* #name{
   text-align: center;
 }
+
 #credentials{
   background-color: rgba(167, 51, 51, .95);
   font-family: 'Fredoka One', cursive; */
@@ -142,13 +77,16 @@
 /* #link-to-picture{
   margin-top: 3%;
 }
+
 #uploadFace, #cancel{
   border-radius: 6px;
   background-color: blue;
+
   text-align: center;
   font-size: 14px;
   margin: 2px 2px;
   align-content: center;
+
 } 
     */
 
@@ -163,7 +101,7 @@
     }
 
 
-    .loginbox{
+    .loginbox {
       width: 320px;
       height: 420px;
       background: #000;
@@ -174,6 +112,7 @@
       transform: translate(-50%, -50%);
       box-sizing: border-box;
       padding: 70px 30px;
+      border-radius: 10%;
     }
 
     .avatar{
@@ -181,9 +120,19 @@
       height: 100px;
       border-radius: 50%;
       position: absolute;
-      top: -10%;
+      top: -12%;
       left: calc(50% - 50px);
     }
+
+    .avatar2{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: absolute;
+      top: -12%;
+      left: calc(50% - 62px);
+    }
+
 
     h1{
       margin: 0;
@@ -200,10 +149,10 @@
 
     .loginbox input{
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
 
-    .loginbox input[type="text"], input[type="logInPassword"]
+    .loginbox input[type="text"], input[type="password"]
     {
       border: none;
       border-bottom: 1px solid #fff;
@@ -239,23 +188,73 @@
       color: darkgrey;
     }
 
-    .register-right{
+    .register-center{
       border: none;
-      background: #f8f8f8;
+      background: #000;
       border-radius: 10%;
       padding: 5%;
-      margin-top: 10%;
+      margin-top: 15%;
       margin-left: 20%;
       content: center;
+      box-sizing: border-box;
+      margin-bottom: 8%;
     }
 
-    .register-right h2{
+    .register-center p{
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+    }
+    
+    .register-center h2{
       text-align: center;
       margin-bottom: 10px;
-      color: #555;
+      color: white;
+      margin-top: 6%;
     }
 
-    .register-right .btn-primary{
+    .register-center input[type="text"], input[type="password"]
+    {
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .register-center input{
+      width: 100%;
+      margin-bottom: 35px;
+    }
+
+    .register-center input[type="submit"]
+    {
+      border: none;
+      outline: none;
+      height: 40px;
+      background: #368dc0;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 20px;
+    }
+
+    .register-center input[type="submit"]:hover
+    {
+      cursor: pointer;
+      background: #ffc107;
+      color: #000;
+    }
+
+    .register-center a{
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 20px;
+      color: darkgrey;
+    }
+
+    /* .register-right .btn-primary{
       float: right;
       border-radius: 2rem;
       width: none;
@@ -267,3 +266,4 @@
       padding: 10px;
 
     }
+     */
