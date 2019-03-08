@@ -21,6 +21,11 @@ module.exports = function(app) {
     res.render("login");
     //console.log('this is app.get /login after called res.render login');
   })
+  app.get ('/dashboard', function(req, res){
+      res.render('dashboard')
+
+
+  })
 
 
 
