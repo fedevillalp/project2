@@ -141,10 +141,10 @@ module.exports = function(app) {
     });
     
   });
-
+  
   //COMPARE TWO FACES USING THEIR MICROSOFT ID's
   app.post("/api/face/compare", function(req, res) {
-   
+    var registered_link;
     console.log('This is app.post for /api/face/compare');
 
     console.log(req.body.username);
@@ -186,15 +186,16 @@ module.exports = function(app) {
       //console.log(data);
       console.log('Face ID that was found from the database:')
       faceId2 = data.faceId;
+      registered_link = data.pictureLink;
       console.log(faceId2);
-      compareFaces(faceId1,faceId2);
+      compareFaces(faceId1,faceId2, registered_link);
     });
       
     })
 
 
     
-    function compareFaces(faceId1,faceId2){
+    function compareFaces(faceId1,faceId2,registered_link){
     
         var two_faces_v2 = {
           "faceId1": faceId1, // req.body.link_to_fresh_foto, //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48",
@@ -221,7 +222,15 @@ module.exports = function(app) {
           
           console.log('Compare Faces Response\n');
           console.log(body);
-          res.json(body);
+          var result= JSON.parse(body)
+          var link= JSON.stringify(registered_link)
+          res.render("dashboard", {
+            authentication_result: result,
+            link_registered_pic: link, //
+            link_fresh_pic: imageUrl
+          });
+          
+          // http://localhost:8080/api/face/%22https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688%22
           
         });
 
