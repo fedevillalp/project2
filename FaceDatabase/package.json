@@ -18,7 +18,7 @@
     "mysql2": "^1.6.4",
     "request": "^2.88.0",
     "require": "^2.4.20",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.43.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

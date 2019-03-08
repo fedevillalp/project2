@@ -207,7 +207,7 @@ $("#faceCompare").on("click", function (event) {
 //This temporary button makes a post to api/face/compare
 $("#goto-login-page").on("click", function (event) {
 
-  API.login();
+ API.login()
 })
 
 //This temporary button makes a post to api/face/compare
