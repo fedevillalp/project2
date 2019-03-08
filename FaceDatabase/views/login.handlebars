@@ -1,15 +1,15 @@
 <div class="loginbox">
   <img src="../assets/images/login_avatar.png" class="avatar">
   <h1>Login Here</h1>
-  <form>
+  <form action= "/api/face/compare" method= 'POST'>
     <p>Username</p>
-    <input type="text" id="userName" name="userName" placeholder="Enter Username">
+    <input type="text" id="userName" name="username" placeholder="Enter Username">
     {{!-- <p>Password</p>
     <input type="password" id="logInPassword" placeholder="Enter Password">
     <br> --}}
     <p>Link to Picture</p>
     <textarea class="form-control" id="login-link-to-fresh-picture" aria-describedby="example-description"
-            placeholder="Enter link to Picture">https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?cs=srgb&dl=adult-confidence-elderly-man-1139743.jpg&fm=jpg</textarea>
+            placeholder="Enter link to Picture" name= 'link_to_fresh_foto'></textarea>
     <br>
     <input id="submit-login" type="submit" name="login" value="Login">
   </form>
