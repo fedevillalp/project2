@@ -16,17 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     userName: DataTypes.STRING, 
     faceId: DataTypes.STRING,
     password: DataTypes.STRING
-  }, {
-      freezeTableName: true,
-      instanceMethods: {
-        generateHash(password) {
-          return bcrypt.hash(password, bcrypt.genSaltSync(8));
-        },
-        validPassword(password) {
-          return bcrypt.compare(password, this.password);
-        }
-      }
-    });
+  });
 
   return User;
 
