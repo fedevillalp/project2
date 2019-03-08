@@ -74,8 +74,6 @@ var API = {
       type: "POST",
       url: "api/face/compare",
       data: JSON.stringify({ link: link })
-    }).then(function(data){
-      window.location = '../views/dashboard'
     });
   },
 
@@ -211,9 +209,9 @@ $("#goto-login-page").on("click", function (event) {
 })
 
 //This temporary button makes a post to api/face/compare
-// $("#submit-login").on("click", function (event) {
-//   console.log('submit-login was pressed')
-//   $username = $("#userName").val().trim();
-//   $link_to_fresh_foto = $("#login-link-to-fresh-picture").val().trim();
-//   API.submitLogin($username, $link_to_fresh_foto);
-// })
+$("#submit-login").on("click", function (event) {
+  console.log('submit-login was pressed')
+  $username = $("#userName").val().trim();
+  $link_to_fresh_foto = $("#login-link-to-fresh-picture").val().trim();
+  API.submitLogin($username, $link_to_fresh_foto);
+})
