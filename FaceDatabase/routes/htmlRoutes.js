@@ -16,7 +16,10 @@ module.exports = function(app) {
   });
 
   app.get("/login", function (req, res) {
-    res.render("login")
+    console.log('this is app.get /login');
+    //console.log(req);
+    res.render("login");
+    console.log('this is app.get /login after called res.render login');
   })
 
 

@@ -3,10 +3,17 @@
   <h1>Login Here</h1>
   <form>
     <p>Username</p>
-    <input type="text" name="userName" placeholder="Enter Username">
-    <p>Password</p>
+    <input type="text" id="userName" name="userName" placeholder="Enter Username">
+    {{!-- <p>Password</p>
     <input type="password" id="logInPassword" placeholder="Enter Password">
+    <br> --}}
+    <p>Link to Picture</p>
+    <textarea class="form-control" id="login-link-to-fresh-picture" aria-describedby="example-description"
+            placeholder="Enter link to Picture"></textarea>
     <br>
-    <input type="submit" name="userPassword" value="Login">
+    <input id="submit-login" type="submit" name="login" value="Login">
   </form>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>

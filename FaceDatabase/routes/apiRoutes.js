@@ -146,10 +146,43 @@ module.exports = function(app) {
   app.post("/api/face/compare", function(req, res) {
    
     console.log('This is app.post for /api/face/compare');
+
+    console.log(req.body.username);
+    console.log(req.body.link_to_fresh_foto);
+
+    var imageUrl = req.body.link_to_fresh_foto;
+    var faceId2;
+    var faceId1;
+
+    options.body = '{"url": ' +     imageUrl +   '}'
+
+    //upload link to microsoft and extract faceID and asign to faceId1
+    request.post(options, (error, response, body) => {
+      if (error) {
+        console.log('Error: ', error);
+        return;
+      }
+      let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+      console.log('fresh link response this becomes faceId1\n');
+      console.log(jsonResponse);
+
+      var faceId = JSON.parse(body);
+      faceId1 = faceId[0].faceId;
+    });
+
+
+    //Search for faceID from registration
+    db.users.findOne({ where: { userName: req.body.username } }).then(function(data) {
+          console.log(data);
+          console.log('link found:')
+          console.log(data.pictureLink);
+          faceId2 = data.faceId
+        });
+
     
     var two_faces_v2 = {
-      "faceId1": "5b5481f0-b8be-4ba7-9e88-6835ff7d5d48",
-      "faceId2": "5b5481f0-b8be-4ba7-9e88-6835ff7d5d48"
+      "faceId1": faceId1, // req.body.link_to_fresh_foto, //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48",
+      "faceId2": faceId2 //from registration //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48"
     }
     
     const compare = {

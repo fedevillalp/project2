@@ -75,6 +75,28 @@ var API = {
       url: "api/face/compare",
       data: JSON.stringify({ link: link })
     });
+  },
+
+  login: function() {
+    console.log('login pressed');
+       return $.ajax({
+         url: "/login",
+         type: "GET"
+       });
+  },
+
+  submitLogin: function(username, link_to_fresh_foto) {
+    console.log('this is submitLogin()');
+    console.log(username,link_to_fresh_foto);
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/face/compare",
+      data: JSON.stringify({ username: username, link_to_fresh_foto: link_to_fresh_foto  })
+    });
+       
   }
 
 
@@ -178,4 +200,18 @@ $("#faceCompare").on("click", function (event) {
   console.log($linkToPicture);
   console.log('Calling API.getFaceFile()');
   API.postFaceCompare($linkToPicture);
+})
+
+//This temporary button makes a post to api/face/compare
+$("#login").on("click", function (event) {
+
+  API.login();
+})
+
+//This temporary button makes a post to api/face/compare
+$("#submit-login").on("click", function (event) {
+  console.log('submit-login was pressed')
+  $username = $("#userName").val().trim();
+  $link_to_fresh_foto = $("#login-link-to-fresh-picture").val().trim();
+  API.submitLogin($username, $link_to_fresh_foto);
 })
