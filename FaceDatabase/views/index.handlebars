@@ -34,7 +34,29 @@
       </div>
     </div>
   </div>
-</div>
+
+  <div class= 'container'> 
+    <div class= 'row'>
+      <style>
+        #screenshot-img,
+        .videostream {
+          width: 250px;
+          height: 200px;
+        }
+      </style>
+        <video autoplay></video>
+        <img src="">
+        <canvas style="display:none;"></canvas>
+      
+        <div id="screenshot" style="text-align:center;">
+          <video class="videostream" autoplay=""></video>
+          <img id="screenshot-img"/>
+          <p><button class="capture-button">Capture video</button>
+          </p>
+          <p><button id="screenshot-button">Take screenshot</button></p>
+        </div>
+    </div>
+  </div>
 
 {{!-- <div class="container-fluid">
   <div id="home-header">
@@ -117,3 +139,4 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+<script src="/js/view.js"></script>
