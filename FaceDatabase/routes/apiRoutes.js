@@ -7,7 +7,7 @@ var filename = ("man.jpg");
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = process.env.API_KEY || '28ed332917fa41b1a399f074180c6a88';
+const subscriptionKey = process.env.API_KEY;
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
@@ -58,7 +58,9 @@ module.exports = function (app) {
 
     });
   });
-
+  app.get('/login', function(req, res){
+    res.render('login')
+  })
   // Create a new example
   // app.post("/api/signup", function(req, res) {
   //   db.users.create({
