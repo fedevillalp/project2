@@ -1,17 +1,23 @@
 <br><br>
-<div class='container mx-auto'>
+<div class='container mx-auto light-back'>
     <div class='row'>
-        <div class='col-lg-6'>
-            <h1>Is Identical: {{authentication_result.isIdentical}}</h1>
-            <h1> Confidence: {{authentication_result.confidence}}</h1>
+        <div class='col-lg-12'>
+            <h3 id= 'identical Cont'>Is Identical: <h2 id= 'Identical'>{{authentication_result.isIdentical}}</h2></h3>
+            </div>
+    </div>
+            <div class='row'>
+                <div class='col-lg-12'>
+            <h3> Confidence: <h2 id= 'Identical' >{{authentication_result.confidence}}</h2></h3>
         </div>
     </div>
     <div class='row'>
-        <div class='col-lg-4'>
+        <div class='col-lg-6'>
             <img id='fresh' src='{{link_fresh_pic}}' />
+            <p>Image you logged in with.</p>
         </div>
-        <div class='col-lg-4'>
+        <div class='col-lg-6'>
             <img id='old' src='{{link_registered_pic}}' />
+            <p>Image you registered with.</p>
         </div>
     </div>
 </div>
