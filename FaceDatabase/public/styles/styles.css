@@ -16,7 +16,6 @@
 .body{
   background-image: url('/public/assets/images/chat_bg.png');
 }
-
 #home-header{
   background-color: rgb(64, 138, 167);
   /* font-family: 'Fredoka One', cursive; */
@@ -24,15 +23,10 @@
   
  
 }
-
-
-
-
 #appName{
   font-size: 65px;
   text-shadow: 2px 2px white;
 }
-
 #desc{
   text-shadow: .9px .9px white;
   font-size: 18px;
@@ -54,7 +48,6 @@
 /* #name{
   text-align: center;
 }
-
 #credentials{
   background-color: rgba(167, 51, 51, .95);
   font-family: 'Fredoka One', cursive; */
@@ -77,16 +70,13 @@
 /* #link-to-picture{
   margin-top: 3%;
 }
-
 #uploadFace, #cancel{
   border-radius: 6px;
   background-color: blue;
-
   text-align: center;
   font-size: 14px;
   margin: 2px 2px;
   align-content: center;
-
 } 
     */
 
@@ -305,4 +295,53 @@
       /* border: #ffc107; */
       border-color: 100px outset #ddd;
       background-color: #368dc0;
+    }
+
+         #Identical{
+      color: red;
+    }
+    #fresh, #old{
+      max-width: 500px;
+      max-height: 500px;
+      border: solid 10px black;
+      border-radius: 10px;
+    }
+    .videostream{
+      border: solid 10px white;
+      border-radius: 10px;
+      max-width: 400px;
+      width: auto;
+      height: auto;
+      background-color: black;
+      position: relative;
+      left: -150px;
+      bottom: -250PX;
+
+    }
+    #screenshot-img{
+      border: solid 10px white;
+      border-radius: 10px;
+      max-width: 400px;
+      width: auto;
+      height: auto;
+      background-color: black;
+      position: relative;
+      left: 350px;
+      top: 100px;
+    }
+    .capture-button{
+       position: relative;
+        left: -20px;
+         top: 300px;
+    }
+    #screenshot-button{
+       position: relative;
+        left: 105px;
+         top: 255px;
+    }
+    #capture{
+      position: relative !important ;
+      top: -400px;
+      left: -200px !important;
+
     }

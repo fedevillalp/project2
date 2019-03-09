@@ -1,4 +1,3 @@
-
 <div id="home-header">
   <div class="container clearfix">
     <div class="row">
@@ -10,32 +9,62 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-7 register-center">
       <img src="../assets/images/login_avatar.png" class="avatar2">
       <h2>Register</h2>
-        <div class="register-form">
-          <div class="form-group">
-            <input id="first_name" type="text" name="Name" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <input id="user_name" type="text" name="Alias" placeholder="Alias">
-          </div>
-          <div class="form-group">
-            <input type="password" id="logInPassword" placeholder="Password">
-          </div>
-          <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
-            placeholder="Enter link to Picture"></textarea>
-          <br>
-         <input id="uploadFace" type="submit" name="userSubmit" value="Submit">
-          </div>
+      <div class="register-form">
+        <div class="form-group">
+          <input id="first_name" type="text" name="Name" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <input id="user_name" type="text" name="Alias" placeholder="Alias">
+        </div>
+        <div class="form-group">
+          <input type="password" id="logInPassword" placeholder="Password">
+        </div>
+        <textarea class="form-control" id="link-to-picture" aria-describedby="example-description"
+          placeholder="Enter link to Picture"></textarea>
+        <br>
+        <input id="uploadFace" type="submit" name="userSubmit" value="Submit">
       </div>
     </div>
   </div>
 
-  <div class= 'container'> 
+
+
+
+
+
+  <video id="capturebox" id='capture' autoplay width="306" height="150"></video>
+  <img src="">
+  <canvas style="display:none"></canvas>
+  <img id="screenshot-img move-up" style="text-align:center, border-color:white, background-color: white">
+  {{!-- </div> --}}
+  <video autoplay></video>
+  <img src="">
+  <canvas style="display:none;"></canvas>
+  <div id="screenshot" style="text-align:center;">
+    <video class="videostream" autoplay=""></video>
+    <img id="screenshot-img" />
+    <p><button class="capture-button">Start Camera</button></p>
+    <p><button id="screenshot-button">Take Picture</button></p>
+  </div>
+  {{!-- <div class='img-container'> --}}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{{!-- <div class= 'container'> 
     <div class= 'row'>
       <style>
         #screenshot-img,
@@ -56,7 +85,7 @@
           <p><button id="screenshot-button">Take screenshot</button></p>
         </div>
     </div>
-  </div>
+  </div> --}}
 
 {{!-- <div class="container-fluid">
   <div id="home-header">
