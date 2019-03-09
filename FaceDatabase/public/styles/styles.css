@@ -16,6 +16,7 @@
 .body{
   background-image: url('/public/assets/images/chat_bg.png');
 }
+
 #home-header{
   background-color: rgb(64, 138, 167);
   /* font-family: 'Fredoka One', cursive; */
@@ -23,10 +24,15 @@
   
  
 }
+
+
+
+
 #appName{
   font-size: 65px;
   text-shadow: 2px 2px white;
 }
+
 #desc{
   text-shadow: .9px .9px white;
   font-size: 18px;
@@ -48,6 +54,7 @@
 /* #name{
   text-align: center;
 }
+
 #credentials{
   background-color: rgba(167, 51, 51, .95);
   font-family: 'Fredoka One', cursive; */
@@ -70,13 +77,16 @@
 /* #link-to-picture{
   margin-top: 3%;
 }
+
 #uploadFace, #cancel{
   border-radius: 6px;
   background-color: blue;
+
   text-align: center;
   font-size: 14px;
   margin: 2px 2px;
   align-content: center;
+
 } 
     */
 
@@ -92,26 +102,26 @@
 
 
     .loginbox {
-      width: 40%;
-      height: 92%;
+      width: 320px;
+      height: 420px;
       background: #000;
       color: #fff;
-      top: 55%;
+      top: 50%;
       left: 50%;
       position: absolute;
-      transform: translate(-50%, -48%);
+      transform: translate(-50%, -50%);
       box-sizing: border-box;
       padding: 70px 30px;
       border-radius: 10%;
     }
 
     .avatar{
-      width: 125px;
-      height: 125px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       position: absolute;
-      top: -11%;
-      left: calc(50% - 65px);
+      top: -12%;
+      left: calc(50% - 50px);
     }
 
     .avatar2{
@@ -179,8 +189,6 @@
     }
 
     .register-center{
-      width: 370px;
-      height: 525px;
       border: none;
       background: #000;
       border-radius: 10%;
@@ -245,59 +253,7 @@
       line-height: 20px;
       color: darkgrey;
     }
-
-/* 
-    .videobox {
-      width: 40%;
-      height: 15%;
-      background: yellow;
-      color: #fff;
-      top: 50%;
-      left: 75%;
-      position: top;
-      transform: translate(-65%, -65%);
-      box-sizing: border-box;
-      padding: 70px 30px;
-      border-radius: 10%;
-    } */
-
- #Identical{
-      color: red;
-    }
-    #fresh, #old{
-      max-width: 500px;
-      max-height: 500px;
-      border: solid 10px black;
-      border-radius: 10px;
-    }
-
-    .loginbox input[type="button"]
-    {
-      border: none;
-      outline: none;
-      height: 30px;
-      background: #368dc0;
-      color: #fff;
-      font-size: 18px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .loginbox input[type="button"]:hover
-    {
-      cursor: pointer;
-      background: #ffc107;
-      color: #000;
-    }
-
-
-    #captureBox{
-      /* border: #ffc107; */
-      border-color: 100px outset #ddd;
-      background-color: #368dc0;
-    }
-
-         #Identical{
+    #Identical{
       color: red;
     }
     #fresh, #old{
@@ -345,3 +301,17 @@
       left: -200px !important;
 
     }
+   
+    /* .register-right .btn-primary{
+      float: right;
+      border-radius: 2rem;
+      width: none;
+      width: 120px;
+      background: #368dc0;
+      font-weight: 600;
+      color: #555;
+      margin-top: 20px;
+      padding: 10px;
+
+    }
+     */
