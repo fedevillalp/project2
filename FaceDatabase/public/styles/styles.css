@@ -102,26 +102,26 @@
 
 
     .loginbox {
-      width: 320px;
-      height: 420px;
+      width: 40%;
+      height: 92%;
       background: #000;
       color: #fff;
-      top: 50%;
+      top: 55%;
       left: 50%;
       position: absolute;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -48%);
       box-sizing: border-box;
       padding: 70px 30px;
       border-radius: 10%;
     }
 
     .avatar{
-      width: 100px;
-      height: 100px;
+      width: 125px;
+      height: 125px;
       border-radius: 50%;
       position: absolute;
-      top: -12%;
-      left: calc(50% - 50px);
+      top: -11%;
+      left: calc(50% - 65px);
     }
 
     .avatar2{
@@ -189,6 +189,8 @@
     }
 
     .register-center{
+      width: 370px;
+      height: 525px;
       border: none;
       background: #000;
       border-radius: 10%;
@@ -253,17 +255,44 @@
       line-height: 20px;
       color: darkgrey;
     }
+/* 
+    .videobox {
+      width: 40%;
+      height: 15%;
+      background: yellow;
+      color: #fff;
+      top: 50%;
+      left: 75%;
+      position: top;
+      transform: translate(-65%, -65%);
+      box-sizing: border-box;
+      padding: 70px 30px;
+      border-radius: 10%;
+    } */
 
-    /* .register-right .btn-primary{
-      float: right;
-      border-radius: 2rem;
-      width: none;
-      width: 120px;
+
+    .loginbox input[type="button"]
+    {
+      border: none;
+      outline: none;
+      height: 30px;
       background: #368dc0;
-      font-weight: 600;
-      color: #555;
-      margin-top: 20px;
-      padding: 10px;
-
+      color: #fff;
+      font-size: 18px;
+      border-radius: 20px;
+      text-align: center;
     }
-     */
+
+    .loginbox input[type="button"]:hover
+    {
+      cursor: pointer;
+      background: #ffc107;
+      color: #000;
+    }
+
+
+    #captureBox{
+      /* border: #ffc107; */
+      border-color: 100px outset #ddd;
+      background-color: #368dc0;
+    }
