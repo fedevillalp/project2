@@ -1,19 +1,37 @@
+  {{!-- <div class='videobox'>
+    <div class='row'>
+      <video autoplay></video>
+      <img src="">
+      <canvas style="display:none;"></canvas>
+
+      <div id="screenshot" style="text-align:center;">
+        <video class="videostream" autoplay=""></video>
+        <img id="screenshot-img" />
+        <p><button class="capture-button">Capture video</button>
+        </p>
+        <p><button id="screenshot-button">Take screenshot</button></p>
+      </div>
+    </div>
+  </div> --}}
+
 <div class="loginbox">
   <img src="../assets/images/login_avatar.png" class="avatar">
   <h1>Login Here</h1>
-  <form action= "/api/face/compare" method= 'POST'>
+  <video id="capturebox" autoplay width="306" height="150"></video>
+  <img src="">
+  <canvas style="display:none"></canvas>
+  <img id="screenshot-img" style="text-align:center, border-color:white, background-color: white">
+   <input type="button" name="capture-button" value="Caputure Video">
+   <input type="button" name="screenshot-button" value="Caputure Screenshot">
+  {{!-- <p><button type="submit" class="capture-button" >Caputure Video</button></p> --}}
+  {{!-- <p><button id="screenshot-button" type="submit">Take Screenshot</button></p> --}}
+  <form>
     <p>Username</p>
-    <input type="text" id="userName" name="username" placeholder="Enter Username">
-    {{!-- <p>Password</p>
+    <input type="text" name="userName" placeholder="Enter Username">
+    <p>Password</p>
     <input type="password" id="logInPassword" placeholder="Enter Password">
-    <br> --}}
-    <p>Link to Picture</p>
-    <textarea class="form-control" id="login-link-to-fresh-picture" aria-describedby="example-description"
-            placeholder="Enter link to Picture" name= 'link_to_fresh_foto'></textarea>
     <br>
-    <input id="submit-login" type="submit" name="login" value="Login">
+    <input type="submit" name="userPassword" value="Login">
   </form>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
