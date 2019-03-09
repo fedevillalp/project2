@@ -7,7 +7,7 @@ var filename = ("man.jpg");
 const request = require('request');
 
 // Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = process.env.API_KEY;
+const subscriptionKey = process.env.API_KEY || '28ed332917fa41b1a399f074180c6a88';
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
@@ -16,26 +16,26 @@ const uriBase = 'https://westus.api.cognitive.microsoft.com/face/v1.0/detect';
 
 
 
-var imageUrl = 
-      'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?cs=srgb&dl=adult-confidence-elderly-man-1139743.jpg&fm=jpg';
-     
+var imageUrl =
+  'https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?cs=srgb&dl=adult-confidence-elderly-man-1139743.jpg&fm=jpg';
+
 // Request parameters.
 const params = {
-    'returnFaceId': 'true',
-    'returnFaceLandmarks': 'false',
-    'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,' +
-        'emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
+  'returnFaceId': 'true',
+  'returnFaceLandmarks': 'false',
+  'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,' +
+    'emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
 };
 
 //USING LINK
 const options = {
-    uri: uriBase,
-    qs: params,
-    body: '{"url": ' + '"' + imageUrl + '"}',
-    headers: {
-        'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key' : subscriptionKey
-    }
+  uri: uriBase,
+  qs: params,
+  body: '{"url": ' + '"' + imageUrl + '"}',
+  headers: {
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': subscriptionKey
+  }
 };
 
 //USING FILE
@@ -44,34 +44,34 @@ var options_file = {
   qs: params,
   body: fs.readFileSync(filename),//'  {"url": ' + '"' + imageUrl + '  "}  ',
   headers: {
-      'Content-Type': 'application/octet-stream',
-      'Ocp-Apim-Subscription-Key' : subscriptionKey
+    'Content-Type': 'application/octet-stream',
+    'Ocp-Apim-Subscription-Key': subscriptionKey
   }
 };
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  app.get("/api/users", function(req, res) {
-    db.users.findAll({}).then(function(dbUsers) {
+  app.get("/api/users", function (req, res) {
+    db.users.findAll({}).then(function (dbUsers) {
       console.log(dbUsers);
       res.json(dbUsers);
-      
+
     });
   });
 
   // Create a new example
-  app.post("/api/signup", function(req, res) {
-    db.users.create({
-      firstName: 'Dre', 
-      lastName: 'Campbell', 
-      userPicture: 'https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688',
-      username: 'drecamp8',
-      password: 'password'
-    }).then(function(dbUsers) {
-      console.log('User created...');
-      res.json(dbUsers);
-    });
-  });
+  // app.post("/api/signup", function(req, res) {
+  //   db.users.create({
+  //     firstName: 'Dre', 
+  //     lastName: 'Campbell', 
+  //     userPicture: 'https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688',
+  //     username: 'drecamp8',
+  //     password: 'password'
+  //   }).then(function(dbUsers) {
+  //     console.log('User created...');
+  //     res.json(dbUsers);
+  //   });
+  // });
 
   // // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
@@ -84,14 +84,14 @@ module.exports = function(app) {
   //the request library. 
 
   //USING A LINK TO UPLOAD IMAGE
-  app.post("/api/face/upload", function(req, res) {
-   
-    console.log('This is app.post for /api/face/upload');
-    
-    imageUrl = JSON.stringify(req.body.link);
-    options.body = '{"url": ' +     imageUrl +   '}'
+  app.post("/api/face/upload", function (req, res) {
 
-    
+    console.log('This is app.post for /api/face/upload');
+
+    imageUrl = JSON.stringify(req.body.link);
+    options.body = '{"url": ' + imageUrl + '}'
+
+
     // This code provided by Microsoft to make request
     request.post(options, (error, response, body) => {
       if (error) {
@@ -106,29 +106,29 @@ module.exports = function(app) {
       faceId = faceId[0].faceId;
 
       db.users.create({
-        firstName: req.body.first_name, 
-        userName: req.body.user_name, 
+        firstName: req.body.first_name,
+        userName: req.body.user_name,
         pictureLink: imageUrl,
-        faceId: faceId, 
+        faceId: faceId,
         password: 'password2'
-      }).then(function(dbUsers) {
+      }).then(function (dbUsers) {
         console.log('User Test created...');
         //res.json(dbUsers);
       });
 
       res.json(jsonResponse);
     });
-    
+
   });
 
   //USING AN ACTUAL FILE TO UPLOAD IMAGE
-  app.post("/api/face/uploadfile", function(req, res) {
-   
+  app.post("/api/face/uploadfile", function (req, res) {
+
     console.log('This is app.post for /api/face/uploadfile');
-    
+
     //imageUrl = JSON.stringify(req.body.link);
     //options_pic.body = fs.readFileSync(filename)
-    
+
     // This code provided my Microsoft to make request
     request.post(options_file, (error, response, body) => {
       if (error) {
@@ -139,11 +139,11 @@ module.exports = function(app) {
       console.log(jsonResponse);
       res.json(jsonResponse);
     });
-    
+
   });
-  
+
   //COMPARE TWO FACES USING THEIR MICROSOFT ID's
-  app.post("/api/face/compare", function(req, res) {
+  app.post("/api/face/compare", function (req, res) {
     var registered_link;
     console.log('This is app.post for /api/face/compare');
 
@@ -159,8 +159,8 @@ module.exports = function(app) {
       qs: params,
       body: '{"url": ' + '"' + imageUrl + '"}',
       headers: {
-          'Content-Type': 'application/json',
-          'Ocp-Apim-Subscription-Key' : subscriptionKey
+        'Content-Type': 'application/json',
+        'Ocp-Apim-Subscription-Key': subscriptionKey
       }
     };
 
@@ -180,64 +180,57 @@ module.exports = function(app) {
       faceId1 = faceId[0].faceId;  // undefined
       console.log('FaceID from fresh link is: ' + faceId1);
 
-  
+
       //Search for faceID from registration
-    db.users.findOne({ where: { userName: req.body.username } }).then(function(data) {
-      //console.log(data);
-      console.log('Face ID that was found from the database:')
-      faceId2 = data.faceId;
-      registered_link = data.pictureLink;
-      console.log(faceId2);
-      compareFaces(faceId1,faceId2, registered_link);
-    });
-      
+      db.users.findOne({ where: { userName: req.body.username } }).then(function (data) {
+        //console.log(data);
+        console.log('Face ID that was found from the database:')
+        faceId2 = data.faceId;
+        registered_link = data.pictureLink;
+        console.log(faceId2);
+        compareFaces(faceId1, faceId2, registered_link);
+      });
+
     })
 
 
-    
-    function compareFaces(faceId1,faceId2,registered_link){
-    
-        var two_faces_v2 = {
-          "faceId1": faceId1, // req.body.link_to_fresh_foto, //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48",
-          "faceId2": faceId2 //from registration //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48"
+
+    function compareFaces(faceId1, faceId2, registered_link) {
+
+      var two_faces_v2 = {
+        "faceId1": faceId1, // req.body.link_to_fresh_foto, //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48",
+        "faceId2": faceId2 //from registration //"5b5481f0-b8be-4ba7-9e88-6835ff7d5d48"
+      }
+
+      console.log(two_faces_v2);
+
+      const compare = {
+        uri: 'https://westus.api.cognitive.microsoft.com/face/v1.0/verify',
+        //qs: params,
+        body: JSON.stringify(two_faces_v2),
+        headers: {
+          'Content-Type': 'application/json',
+          'Ocp-Apim-Subscription-Key': subscriptionKey
+        }
+      };
+
+      request.post(compare, (error, response, body) => {
+        if (error) {
+          console.log('Error: ', error);
+          return;
         }
 
-        console.log(two_faces_v2);
-
-        const compare = {
-          uri: 'https://westus.api.cognitive.microsoft.com/face/v1.0/verify',
-          //qs: params,
-          body: JSON.stringify(two_faces_v2),
-          headers: {
-              'Content-Type': 'application/json',
-              'Ocp-Apim-Subscription-Key' : subscriptionKey
-          }
-        };
-        
-        request.post(compare, (error, response, body) => {
-          if (error) {
-            console.log('Error: ', error);
-            return;
-          }
-          
-          console.log('Compare Faces Response\n');
-          console.log(body);
-          var result= JSON.parse(body)
-          var link= JSON.stringify(registered_link)
-          res.render("dashboard", {
-            authentication_result: result,
-            link_registered_pic: link, //
-            link_fresh_pic: imageUrl
-          });
-          
-          // http://localhost:8080/api/face/%22https://media.gettyimages.com/photos/universitys-andre-campbell-is-part-of-the-2015-irvine-world-news-picture-id1032185688%22
-          
+        console.log('Compare Faces Response\n');
+        console.log(body);
+        var result = JSON.parse(body);
+        var link = JSON.parse(registered_link);
+        // console.log('broken link ', link);
+        res.render("dashboard", {
+          authentication_result: result,
+          link_registered_pic: link,
+          link_fresh_pic: imageUrl
         });
-
+      });
     }
-    
   });
-  
-
-
 };

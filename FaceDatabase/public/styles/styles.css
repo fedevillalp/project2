@@ -253,6 +253,16 @@
       line-height: 20px;
       color: darkgrey;
     }
+    #Identical{
+      color: red;
+    }
+    #fresh, #old{
+      max-width: 500px;
+      max-height: 500px;
+      border: solid 10px black;
+      border-radius: 10px;
+    }
+
 
     /* .register-right .btn-primary{
       float: right;
